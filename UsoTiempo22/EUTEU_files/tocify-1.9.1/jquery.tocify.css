@@ -21,12 +21,10 @@
     padding: 0;
     border: none;
     line-height: 30px;
-
 }
 
 /* Top level header elements */
 .tocify-header {
-    background-color: #FBBB27;
     text-indent: 10px;
 }
 
@@ -57,18 +55,15 @@
 
 /* Twitter Bootstrap Override Style */
 .tocify .tocify-item > a, .tocify .nav-list .nav-header {
-
     margin: 0px;
 }
 
 /* Twitter Bootstrap Override Styles */
 .tocify .tocify-item a, .tocify .list-group-item {
-
     padding: 5px;
 }
 
 .tocify .nav-pills > li {
-
     float: none;
 }
 
