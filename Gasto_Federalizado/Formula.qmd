@@ -1,0 +1,75 @@
+---
+format:
+  html: 
+     css: "stmarkdown.css"
+     page-layout: custom
+     self-contained: true
+---
+```{r setup, include=FALSE}
+#rm(list=ls())
+lib <- c("tidyr", "dplyr", "lubridate", "XML", "reshape2","ggplot2", "scales","plotly", "forecast", 
+         "readr","xts", "htmlwidgets", "dygraphs", "leaflet", "sp", "remotes", "fmsb", "tidyverse", 
+         "kableExtra", "knitr", "pander","systemfonts","huxtable", "magick", "haven", "devEMF", 
+         "webshot", "flextable","readxl", "ggforce", "zoo", "purrr","openxlsx", "downloader",
+         "patchwork")
+lapply(lib, library, character.only = TRUE)
+```
+
+$$
+P_{i,t} = P_{i,07} +\Delta FGP_{07,t}(0.6C1_{i,t} + 0.3C2_{i,t} + 0.1C3_{i,t})
+$$
+
+$$
+C1_{i,t} = \frac{\frac{PIB_{i,t-1}}{PIB_{i,t-2}}n_{i}}{\sum_{i}\frac{PIB_{i,t-1}}{PIB_{i,t-2}}n_{i}}
+$$
+
+$$
+C2_{i,t} = \frac{\Delta IE_{i,t}n_{i}}{\sum_{i}\Delta IE_{i,t}n_{i}}
+$$
+
+$$
+\Delta IE_{i,t} =\frac{1}{3}\sum_{j = 1}^{3}\frac{IE_{i,t-j}}{IE_{i,t-j-1}}
+$$
+
+$$
+C3_{i,t} =\frac{IE_{i,t-1}n_{i}}{\sum_{i}IE_{i,t-1}n_{i}}
+$$
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: justify
+Donde:
+
+$C1_{i,t}$,$C2_{i,t}$ y $C3_{i,t}$ son los coeficientes de distribución del Fondo General de Participaciones de la entidad i en el año t en que se efectúa el cálculo. 
+
+Considerando los coeficientes $C2$ y $C3$ como incentivos recaudatorios.
+
+$P_{i,t}$ es la participación del fondo a que se refiere este artículo, de la entidad i en el año t.
+
+$P_{i,07}$ es la participación del fondo a que se refiere este artículo que la entidad i recibió en el año 2007.
+
+$\Delta FGP_{07,t}$ es el crecimiento en el Fondo General de Participaciones entre el año 2007 y el año t.
+
+$PIB_{i,t-1}$ es la información oficial del Producto Interno Bruto del último año que hubiere dado a conocer el Instituto Nacional de Estadística y Geografía para la entidad i.
+
+$PIB_{i,t-2}$ es la información oficial del Producto Interno Bruto del año anterior al definido en la variable anterior que hubiere dado a conocer el Instituto Nacional de Estadística y Geografía para la entidad i.
+
+$IE_{i,t}$ es la información relativa a la recaudación de impuestos y derechos locales de la entidad i en el año t contenida en la última cuenta pública oficial y reportados en los formatos que emita la Secretaría de Hacienda y Crédito Público.
+
+Para tal efecto, se considerarán impuestos y derechos locales todos aquéllos que se recauden a nivel estatal, así como el impuesto predial y los derechos por suministro de agua que registren un flujo de efectivo.
+
+Las cifras reportadas en la cuenta pública oficial de los citados ingresos, que estén relacionadas con el otorgamiento de beneficios, programas, subvenciones, o subsidios, aun cuando tengan una denominación distinta en la legislación local correspondiente, y que estén dirigidos a determinado sector de la población o de la economía, no se considerarán ingresos para efectos de la determinación de coeficientes de participaciones.
+
+En lo que corresponde a los derechos, se considerarán aquellas contribuciones establecidas en Ley por el uso o aprovechamiento de los bienes del dominio público de la entidad, así como por los servicios que presten las entidades en sus funciones de derecho público, excepto cuando se presten por organismos descentralizados u órganos desconcentrados.No obstante, se considerarán los derechos a cargo de los organismos públicos descentralizados que presten servicios exclusivos de las entidades.
+
+La Comisión Permanente de Funcionarios Fiscales podrá aprobar otros impuestos y derechos respecto de los cuales exista información certera y verificable, atendiendo a criterios de equidad entre las entidades federativas.
+
+$\Delta IE_{i,t}$ es un promedio móvil de tres años de las tasas de crecimiento en la recaudación de los impuestos y derechos locales de la entidad i, referidos en la variable anterior.
+
+$n_{i}$ es la última información oficial de población que hubiere dado a conocer el Instituto Nacional de Estadística y Geografía para la entidad i.
+
+$\sum_{i}$ es la suma sobre todas las entidades de la variable que le sigue.
+:::
