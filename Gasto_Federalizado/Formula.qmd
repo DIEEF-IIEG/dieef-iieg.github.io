@@ -5,6 +5,7 @@ format:
      page-layout: custom
      self-contained: true
 ---
+
 ```{r setup, include=FALSE}
 #rm(list=ls())
 lib <- c("tidyr", "dplyr", "lubridate", "XML", "reshape2","ggplot2", "scales","plotly", "forecast", 
@@ -34,6 +35,7 @@ $$
 $$
 C3_{i,t} =\frac{IE_{i,t-1}n_{i}}{\sum_{i}IE_{i,t-1}n_{i}}
 $$
+
 ```{css, echo = FALSE}
 .justify {
   text-align: justify !important
@@ -43,21 +45,21 @@ $$
 ::: justify
 Donde:
 
-$C1_{i,t}$,$C2_{i,t}$ y $C3_{i,t}$ son los coeficientes de distribución del Fondo General de Participaciones de la entidad i en el año t en que se efectúa el cálculo. 
+$C1_{i,t}$,$C2_{i,t}$ y $C3_{i,t}$ son los coeficientes de distribución del Fondo General de Participaciones de la entidad $i$ en el año $t$ en que se efectúa el cálculo.
 
 Considerando los coeficientes $C2$ y $C3$ como incentivos recaudatorios.
 
-$P_{i,t}$ es la participación del fondo a que se refiere este artículo, de la entidad i en el año t.
+$P_{i,t}$ es la participación del fondo a que se refiere este artículo, de la entidad $i$ en el año $t$.
 
-$P_{i,07}$ es la participación del fondo a que se refiere este artículo que la entidad i recibió en el año 2007.
+$P_{i,07}$ es la participación del fondo a que se refiere este artículo que la entidad $i$ recibió en el año 2007.
 
-$\Delta FGP_{07,t}$ es el crecimiento en el Fondo General de Participaciones entre el año 2007 y el año t.
+$\Delta FGP_{07,t}$ es el crecimiento en el Fondo General de Participaciones entre el año 2007 y el año $t$.
 
-$PIB_{i,t-1}$ es la información oficial del Producto Interno Bruto del último año que hubiere dado a conocer el Instituto Nacional de Estadística y Geografía para la entidad i.
+$PIB_{i,t-1}$ es la información oficial del Producto Interno Bruto del último año que hubiere dado a conocer el Instituto Nacional de Estadística y Geografía para la entidad $i$.
 
 $PIB_{i,t-2}$ es la información oficial del Producto Interno Bruto del año anterior al definido en la variable anterior que hubiere dado a conocer el Instituto Nacional de Estadística y Geografía para la entidad i.
 
-$IE_{i,t}$ es la información relativa a la recaudación de impuestos y derechos locales de la entidad i en el año t contenida en la última cuenta pública oficial y reportados en los formatos que emita la Secretaría de Hacienda y Crédito Público.
+$IE_{i,t}$ es la información relativa a la recaudación de impuestos y derechos locales de la entidad $i$ en el año $t$ contenida en la última cuenta pública oficial y reportados en los formatos que emita la Secretaría de Hacienda y Crédito Público.
 
 Para tal efecto, se considerarán impuestos y derechos locales todos aquéllos que se recauden a nivel estatal, así como el impuesto predial y los derechos por suministro de agua que registren un flujo de efectivo.
 
@@ -67,9 +69,21 @@ En lo que corresponde a los derechos, se considerarán aquellas contribuciones e
 
 La Comisión Permanente de Funcionarios Fiscales podrá aprobar otros impuestos y derechos respecto de los cuales exista información certera y verificable, atendiendo a criterios de equidad entre las entidades federativas.
 
-$\Delta IE_{i,t}$ es un promedio móvil de tres años de las tasas de crecimiento en la recaudación de los impuestos y derechos locales de la entidad i, referidos en la variable anterior.
+$\Delta IE_{i,t}$ es un promedio móvil de tres años de las tasas de crecimiento en la recaudación de los impuestos y derechos locales de la entidad $i$, referidos en la variable anterior.
 
-$n_{i}$ es la última información oficial de población que hubiere dado a conocer el Instituto Nacional de Estadística y Geografía para la entidad i.
+$n_{i}$ es la última información oficial de población que hubiere dado a conocer el Instituto Nacional de Estadística y Geografía para la entidad $i$.
 
 $\sum_{i}$ es la suma sobre todas las entidades de la variable que le sigue.
+
 :::
+
+<br>
+
+<br>
+
+::: {style="font-size:15px"}
+
+Fuente: IIEG con información del DECRETO por el que se reforman y adicionan diversas disposiciones de la Ley de Coordinación Fiscal y de la Ley General de Contabilidad Gubernamental, Secretaría de Gobernación; Estados Unidos Mexicanos; DOF 09/12/2013; [citado el 01 de julio de 2024]; disponible en versión HTML en internet:
+[https://www.dof.gob.mx/nota_detalle.php?codigo=5324940&fecha=09/12/2013#gsc.tab=0](https://www.dof.gob.mx/nota_detalle.php?codigo=5324940&fecha=09/12/2013#gsc.tab=0).
+:::
+
